@@ -147,48 +147,45 @@ console.log("allEnemies.length", allEnemies.length);
 
 // Collision detection
 
-function checkCollisions () {
-allEnemies.forEach(function(enemy) {
-         if(enemy.x < player.x + 50 &&
+function checkCollisions() {
+    allEnemies.forEach(function(enemy) {
+        if (enemy.x < player.x + 50 &&
             enemy.x + 70 > player.x &&
             enemy.y < player.y + 50 &&
             enemy.y + 70 > player.y) {
-                console.log('collision!');
-                reset();
-            }
-});
+            console.log('collision!');
+            reset();
+        }
+    });
 }
 
 //Resets game.
 
 function reset() {
-player.reset();
+    player.reset();
 };
 
 Player.prototype.reset = function() {
-            this.x = 200;
-            this.y = 400;
-            collide = false;
-        };
+    this.x = 200;
+    this.y = 400;
+    collide = false;
+};
 
 //function checkCollections () {
-//         if(gem.x < player.x + 50 &&
-//            gem.x + 70 > player.x &&
-//            gem.y < player.y + 50 &&
-//            gem.y + 70 > player.y) {
-//                console.log('Gem collected!');
-//                reset();
-//            }
+//   if(gem.x < player.x + 50 &&
+//      gem.x + 70 > player.x &&
+//      gem.y < player.y + 50 &&
+//      gem.y + 70 > player.y) {
+//         console.log('Gem collected!');
+//         reset();
+//      }
 //};
 
 
 //Resets game when player reaches water tiles
-function checkWater () {
-         if (player.y < 41){
-            console.log('WIN!');
-            player.reset();
-        }
+function checkWater() {
+    if (player.y < 41) {
+        console.log('WIN!');
+        player.reset();
+    }
 };
-
-
-
